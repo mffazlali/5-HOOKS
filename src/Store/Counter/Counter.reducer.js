@@ -2,9 +2,10 @@ import * as counterActionType from './Counter.actionType';
 import { counterState } from './Counter.state';
 import { updateObject } from '../Utility';
 
-const CounterReducer = (state = counterState, action) => {
+const CounterReducer = (state=CounterReducer, action) => {
     switch (action.type) {
         case counterActionType.Inc:
+            console.log('a');
             return updateObject(state, { counter: state.counter + 1 });
         case counterActionType.Dec:
             return updateObject(state, { counter: state.counter - 1 });
@@ -14,7 +15,7 @@ const CounterReducer = (state = counterState, action) => {
             return updateObject(state, { counter: state.counter - action.value });
     }
 
-    return state;
+    // return state;
 }
 
 export default CounterReducer;
